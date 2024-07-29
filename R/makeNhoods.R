@@ -239,5 +239,6 @@ makeNhoods <- function(x, prop=0.1, k=21, d=30, refined=TRUE, reduced_dims="PCA"
         resulting_vertices <- V(rv_induced_subgraph)[max_triangles_indices]$name[1]
         return(resulting_vertices)
     }) %>% unlist() %>% as.integer()
+    refined_vertices <- refined_vertices[!is.na(refined_vertices)]
     return(refined_vertices)
 }
